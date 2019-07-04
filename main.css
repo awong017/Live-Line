@@ -10,7 +10,7 @@ body {
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.7)
       ),
-       url('http://dancemusicnw.com/wp-content/uploads/2017/11/DJLove.jpg') fixed;
+       url('https://castlemarne.com/wp-content/uploads/2018/07/denver-music-festivals-1500x609.jpg') fixed;
     background-size: cover;
     background-position: center center;
     background-color: black;
@@ -26,7 +26,7 @@ h1 {
 .homepage-heading {
     text-align: center;
     margin-top: 10px;
-    color: white;
+    color: lightskyblue;
   }
 
 #js-homepage {
@@ -44,8 +44,9 @@ h1 {
 }
 
 .submit {
+    border: solid lightskyblue;
     border-radius: 25px;
-    background-color: transparent;
+    background-color: lightskyblue;
     color: white;
   }
 
