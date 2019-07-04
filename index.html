@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>API Capstone</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <main role="main">
+        <div class="homepage">
+            <h1>Live Line</h1>
+                <p class="homepage-heading">Get connected with your favorite music artists</p>
+        </div>
+            <form id="js-homepage">
+
+                <input type="text" name="search-artist" class="search-bar" id="js-search-artist" placeholder="Search Artist" required>
+
+                <input type="submit" class="submit" value="Connect">
+            </form>
+        <div class="nav-bar"></div>
+        <div class="artist-data"></div>
+        <section class="tags">
+            <h2 class="tags-header">Tags</h2>
+            <div class="artist-tags"></div>
+        </section>
+        <div class="artist-page">
+            <section class="top-tracks">
+                <h2 class="top-tracks-header">Top Tracks</h2>
+                <ol class="artist-top-tracks"></ol>
+            </section>
+            <section class="videos">
+                <h2 class="videos-header">Videos</h2>
+                <div class="artist-videos"></div>
+            </section>
+            <section class="events">
+                <h2 class="events-header">Upcoming Events</h2>
+                <div class="artist-events"></div>
+            </section>
+        </div>
+        <div class="error-page"></div>
+    </main>
+</body>
+</html>

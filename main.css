@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+
+* {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+body {
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+       url('http://dancemusicnw.com/wp-content/uploads/2017/11/DJLove.jpg') fixed;
+    background-size: cover;
+  }
+
+h1 {
+    text-align: center;
+    margin-top: 300px;
+    margin-bottom: 0px;
+    color: white;
+  }
+
+.homepage-heading {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+  }
+
+#js-homepage {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+  }
+  
+
+#js-search-artist{
+    text-align: center;
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+}
+
+.submit {
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+  }
+
+.submit:hover {
+    cursor: pointer; 
+}
+
+.nav-render {
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-submit {
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+}
+
+#js-search-bar {
+    background-color: transparent;
+    color: white;
+}
+
+.tags-header {
+    display: none;
+    color: white;
+}
+
+.artist-tags-render {
+    color: white; 
+    margin-bottom: 0px;
+}
+
+.artist-name {
+    color: white;
+    font-size: 200%;
+}
+
+.artist-image {
+    width: 10%;
+    height: 10%;
+}
+
+.events-header {
+    color: white;
+    display: none;
+    margin-bottom: 50px;
+    margin-right: 125px;
+    text-align: right;
+}
+
+.artist-events-render {
+    color: white;
+    border-bottom: 2px dotted white;
+}
+
+.top-tracks-header {
+    display: none;
+    margin-bottom: 50px;
+}
+
+.top-tracks-header {
+    color: white;
+    margin-bottom: 50px;
+}
+
+.artist-top-tracks-render {
+    color: white;
+    margin-bottom: 25px;
+}
+
+.videos-header {
+    display: none;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.artist-videos {
+    color: white;
+    width: 700px;
+}
+
+.artist-videos-render {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 25px;
+} 
+
+.artist-page {
+    display: flex;
+    justify-content: space-between;
+}
