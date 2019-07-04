@@ -145,6 +145,19 @@ nav {
 
 @media screen and (max-width: 750px) {
 
+    .artist-image {
+        width: 20%;
+        height: 20%;
+    }
+
+    .videos-header {
+        text-align: left;
+    }
+
+    .artist-videos {
+        width: 100%;
+    }
+
     .artist-videos-render {
         display: block;
     }
