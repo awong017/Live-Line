@@ -54,21 +54,6 @@ h1 {
     cursor: pointer; 
 }
 
-.nav-render {
-    color: white;
-}
-
-nav {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.nav-submit {
-    border-radius: 25px;
-    background-color: transparent;
-    color: white;
-}
-
 #js-search-bar {
     background-color: transparent;
     color: white;
@@ -98,8 +83,7 @@ nav {
     color: white;
     display: none;
     margin-bottom: 50px;
-    margin-right: 125px;
-    text-align: right;
+    text-align: left;
 }
 
 .artist-events-render {
@@ -148,13 +132,33 @@ nav {
 
 @media screen and (max-width: 768px) {
 
+    h1 {
+        margin-top: 200px;
+    }
+
+    #js-homepage {
+        text-align: center;
+    }
+
+    .artist-data {
+        text-align: center;
+    }
+
     .artist-image {
         width: 20%;
         height: 20%;
     }
 
-    .videos-header {
-        text-align: left;
+    .tags {
+        text-align: center;
+    }
+
+    .artist-page {
+        display: block;
+    }
+
+    .top-tracks-header {
+        text-align: center;
     }
 
     .artist-videos {
@@ -163,5 +167,15 @@ nav {
 
     .artist-videos-render {
         display: block;
+        text-align: center;
+    }
+
+    .events-header {
+        text-align: center;
+    }
+
+    .artist-events-render {
+        display: block;
+        text-align: center;
     }
 }
