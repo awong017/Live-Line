@@ -12,6 +12,8 @@ body {
       ),
        url('http://dancemusicnw.com/wp-content/uploads/2017/11/DJLove.jpg') fixed;
     background-size: cover;
+    background-position: center center;
+    background-color: black;
   }
 
 h1 {
@@ -143,7 +145,7 @@ nav {
     justify-content: space-between;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
 
     .artist-image {
         width: 20%;
