@@ -63,9 +63,9 @@ function displayArtistEvents(responseJson) {
 
             $('.artist-events').append(
                 `<div class="artist-events-render">
-                    <h2>${responseJson[i].venue.name}</h2>
-                    <p>${responseJson[i].venue.city}, ${area}</p>
-                    <p>${shortDate}</p>
+                    <h2 class="event-name">${responseJson[i].venue.name}</h2>
+                    <p class="event-details">${responseJson[i].venue.city}, ${area}</p>
+                    <p class="event-details">${shortDate}</p>
                     <a href="${responseJson[i].offers[0].url}">Get Tickets</a>
                 </div>`
             )};  
