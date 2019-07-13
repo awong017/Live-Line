@@ -19,6 +19,23 @@ function displayArtistData(responseJson) {
     );
 }
 
+
+function displayArtistBio(responseJson) {
+    console.log(responseJson);
+
+    let keys=Object.keys(responseJson.query.pages)[0];
+
+    let bioExtract=responseJson.query.pages[keys].extract;
+
+    $('.artist-bio').empty();
+
+    $('.artist-bio').append(
+        `<div class="artist-bio-render">
+           <p>${bioExtract}</p>
+        </div>`
+    )
+}
+
 function displayArtistTags(responseJson) {
     console.log(responseJson);
 
@@ -94,7 +111,7 @@ function displayArtistVideos(responseJson) {
 
     $('.videos-header').css('display', 'block');
 
-    for(i=0; i<6; i++) {
+    for(i=0; i<5; i++) {
         $('.artist-videos').append(
             `<div class="artist-videos-render">
                 <p>${responseJson.items[i].snippet.title}</p>
@@ -113,6 +130,17 @@ function getArtistData() {
     fetch(url)
         .then(response => response.json())
         .then(responseJson => displayArtistData(responseJson));
+}
+
+function getArtistBio() {
+    const artist = $('.search-bar').val();
+    const url = "https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro=1&explaintext=1&titles="+artist;
+
+    console.log(url);
+
+    fetch(url)
+        .then(response => response.json())
+        .then(responseJson => displayArtistBio(responseJson));
 }
 
 function getArtistTags() {
@@ -183,6 +211,7 @@ function handleSearch() {
     $('form').on('click', '.submit', function(event) {
         event.preventDefault();
         getArtistData();
+        getArtistBio();
         getArtistTags();
         getArtistTopTracks();
         getArtistVideos();
