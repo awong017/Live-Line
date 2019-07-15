@@ -146,7 +146,7 @@ function getArtistBio() {
 function getArtistTags() {
     const artist = $('.search-bar').val();
     const apiKey="67acd0d07083aa13f9898460d96eeecf";
-    const url = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist="+artist+"&api_key="+apiKey+"&format=json";
+    const url = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist="+artist+"&api_key="+apiKey+"&format=json";
 
     console.log(url);
 
@@ -158,7 +158,7 @@ function getArtistTags() {
 function getArtistTopTracks() {
     const artist = $('.search-bar').val();
     const apiKey="67acd0d07083aa13f9898460d96eeecf";
-    const url="http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist="+artist+"&api_key="+apiKey+"&format=json";
+    const url="https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist="+artist+"&api_key="+apiKey+"&format=json";
 
     console.log(url);
 
