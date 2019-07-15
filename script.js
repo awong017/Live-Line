@@ -6,6 +6,9 @@ function formatQueryParams(params) {
 
 const appID = '07de26590d34af698ca9a82a14a750d4';
 
+// The following "display" functions render data to be 
+// shown in the DOM
+
 function displayArtistData(responseJson) {
     console.log(responseJson);
 
@@ -18,7 +21,6 @@ function displayArtistData(responseJson) {
         </div>`
     );
 }
-
 
 function displayArtistBio(responseJson) {
     console.log(responseJson);
@@ -121,6 +123,9 @@ function displayArtistVideos(responseJson) {
     }
 }
 
+// The following "get" functions fetch the APIs needed
+// for the "display" functions
+
 function getArtistData() {
     const artist = $('.search-bar').val();
     const url = "https://rest.bandsintown.com/artists/"+artist+"?app_id="+appID;
@@ -206,6 +211,7 @@ function getArtistEvents() {
         .then(responseJson => displayArtistEvents(responseJson));
 }
 
+// Handle for the search button
 
 function handleSearch() {
     $('form').on('click', '.submit', function(event) {
