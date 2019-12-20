@@ -128,7 +128,7 @@ function displayArtistVideos(responseJson) {
 
 function getArtistData() {
     const artist = $('.search-bar').val();
-    const url = "https://rest.bandsintown.com/artists/"+artist+"?app_id="+appID;
+    const url = `https://rest.bandsintown.com/artists/${artist}?app_id=${appID}`;
 
     console.log(url);
 
@@ -139,7 +139,7 @@ function getArtistData() {
 
 function getArtistBio() {
     const artist = $('.search-bar').val();
-    const url = "https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro=1&explaintext=1&titles="+artist;
+    const url = `https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro=1&explaintext=1&titles=${artist}`;
 
     console.log(url);
 
@@ -151,7 +151,7 @@ function getArtistBio() {
 function getArtistTags() {
     const artist = $('.search-bar').val();
     const apiKey="67acd0d07083aa13f9898460d96eeecf";
-    const url = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist="+artist+"&api_key="+apiKey+"&format=json";
+    const url = `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artist}&api_key=${apiKey}&format=json`;
 
     console.log(url);
 
@@ -163,7 +163,7 @@ function getArtistTags() {
 function getArtistTopTracks() {
     const artist = $('.search-bar').val();
     const apiKey="67acd0d07083aa13f9898460d96eeecf";
-    const url="https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist="+artist+"&api_key="+apiKey+"&format=json";
+    const url=`https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=${apiKey}&format=json`;
 
     console.log(url);
 
@@ -173,7 +173,7 @@ function getArtistTopTracks() {
 }
 
 function getArtistVideos() {
-    const apiKey = 'AIzaSyBp9C-ptSoFe-4F2sJtBN3g46VkVP9Xe_I'; 
+    const apiKey = 'AIzaSyC9p6TXkLc2rF6VQSyEQHGmeBZg7ZUDY_A'; 
     const artist = $('.search-bar').val();
     const searchURL = 'https://www.googleapis.com/youtube/v3/search';
 
@@ -202,7 +202,7 @@ function formatQueryParams(params) {
 
 function getArtistEvents() {
     const artist = $('.search-bar').val();
-    const url = "https://rest.bandsintown.com/artists/"+artist+"/events?app_id="+appID;
+    const url = `https://rest.bandsintown.com/artists/${artist}/events?app_id=${appID}`;
 
     console.log(url);
 
