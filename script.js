@@ -10,8 +10,7 @@ const appID = '07de26590d34af698ca9a82a14a750d4';
 // shown in the DOM
 
 function displayArtistData(responseJson) {
-    console.log(responseJson);
-
+    
     $('.artist-data').empty();
 
     $('.artist-data').append(
@@ -23,11 +22,14 @@ function displayArtistData(responseJson) {
 }
 
 function displayArtistBio(responseJson) {
-    console.log(responseJson);
+    
+    displayError(responseJson);
 
     let keys=Object.keys(responseJson.query.pages)[0];
 
     let bioExtract=responseJson.query.pages[keys].extract;
+
+    console.log('Bio Extract: ', bioExtract);
 
     $('.artist-bio').empty();
 
@@ -38,9 +40,37 @@ function displayArtistBio(responseJson) {
     )
 }
 
-function displayArtistTags(responseJson) {
-    console.log(responseJson);
+function displayError(responseJson) {
+    
+    console.log('Artist Bio API: ', responseJson);
 
+    let keys=Object.keys(responseJson.query.pages)[0];
+
+    let bioExtract=responseJson.query.pages[keys].extract;
+
+    $('.error-page').empty();
+
+    if(bioExtract === undefined) {
+        $('.artist-heading').css('display','none');
+        $('.tags').css('display','none');
+        $('.artist-page').css('display','none');
+
+        $('.error-page').append(
+            `<div class="error-page-render">
+                <p>Artist not found. Please search another artist</p>
+             </div>`
+        );
+    }
+    else
+    {
+        $('.artist-heading').css('display','block');
+        $('.tags').css('display','block');
+        $('.artist-page').css('display','flex');
+    }
+}
+
+function displayArtistTags(responseJson) {
+    
     $('.artist-tags').empty();
 
     $('.tags-header').css('display','block');
@@ -56,8 +86,7 @@ function displayArtistTags(responseJson) {
 }
 
 function displayArtistEvents(responseJson) {
-    console.log(responseJson);
-
+    
     $('.artist-events').empty();
 
     if(responseJson.length == 0) {
@@ -92,8 +121,7 @@ function displayArtistEvents(responseJson) {
 }
 
 function displayArtistTopTracks(responseJson) {
-    console.log(responseJson);
-
+    
     $('.artist-top-tracks').empty();
 
     $('.top-tracks-header').css('display', 'block');
@@ -107,8 +135,7 @@ function displayArtistTopTracks(responseJson) {
 }
 
 function displayArtistVideos(responseJson) {
-    console.log(responseJson);
-
+   
     $('.artist-videos').empty();
 
     $('.videos-header').css('display', 'block');
@@ -123,6 +150,16 @@ function displayArtistVideos(responseJson) {
     }
 }
 
+function toTitleCase(str) {
+    return str.replace(
+        /\w\S*/g,
+        function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+    );
+}
+
+
 // The following "get" functions fetch the APIs needed
 // for the "display" functions
 
@@ -130,18 +167,16 @@ function getArtistData() {
     const artist = $('.search-bar').val();
     const url = `https://rest.bandsintown.com/artists/${artist}?app_id=${appID}`;
 
-    console.log(url);
-
     fetch(url)
         .then(response => response.json())
         .then(responseJson => displayArtistData(responseJson));
 }
 
 function getArtistBio() {
-    const artist = $('.search-bar').val();
-    const url = `https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro=1&explaintext=1&titles=${artist}`;
 
-    console.log(url);
+    const artist = $('.search-bar').val();
+    const modifiedArtist = toTitleCase(artist);
+    const url = `https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro=1&explaintext=1&titles=${modifiedArtist}`;
 
     fetch(url)
         .then(response => response.json())
@@ -153,8 +188,6 @@ function getArtistTags() {
     const apiKey="67acd0d07083aa13f9898460d96eeecf";
     const url = `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artist}&api_key=${apiKey}&format=json`;
 
-    console.log(url);
-
     fetch(url)
         .then(response => response.json())
         .then(responseJson => displayArtistTags(responseJson));
@@ -164,8 +197,6 @@ function getArtistTopTracks() {
     const artist = $('.search-bar').val();
     const apiKey="67acd0d07083aa13f9898460d96eeecf";
     const url=`https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artist}&api_key=${apiKey}&format=json`;
-
-    console.log(url);
 
     fetch(url)
         .then(response => response.json())
@@ -187,8 +218,6 @@ function getArtistVideos() {
       const queryString = formatQueryParams(params)
       const url = searchURL + '?' + queryString;
     
-      console.log(url);
-    
       fetch(url)
       .then(response => response.json())
       .then(responseJson => displayArtistVideos(responseJson));
@@ -203,8 +232,6 @@ function formatQueryParams(params) {
 function getArtistEvents() {
     const artist = $('.search-bar').val();
     const url = `https://rest.bandsintown.com/artists/${artist}/events?app_id=${appID}`;
-
-    console.log(url);
 
     fetch(url)
         .then(response => response.json())

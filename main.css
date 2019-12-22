@@ -146,10 +146,16 @@ a:hover {
     margin-bottom: 25px;
 } 
 
-
 .artist-page {
     display: flex;
     justify-content: space-between;
+}
+
+.error-page {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 300px;
 }
 
 @media screen and (max-width: 768px) {
