@@ -100,7 +100,7 @@ h1 {
 }
 
 .artist-events-render {
-    border-bottom: 2px dotted white;
+    padding-bottom: 20px;
     text-align: center;
 }
 
@@ -171,7 +171,7 @@ a:hover {
     }
     
     .submit {
-        padding: 0px 0px;
+        padding: 5px 5px;
       }
 
     h1 {
@@ -201,26 +201,32 @@ a:hover {
 
     .top-tracks-header {
         text-align: center;
+        border-top: 2px white dotted;
+        padding-top: 50px;
     }
 
     .artist-top-tracks-render {
         text-align: center;
     }
 
-    .videos-header {
+    .events-header {
         text-align: center;
+        border-top: 2px white dotted;
+        padding-top: 50px;
     }
 
-    .artist-videos-render {
+    .artist-events-render {
         display: block;
         text-align: center;
     }
 
-    .events-header {
+    .videos-header {
         text-align: center;
+        border-top: 2px white dotted;
+        padding-top: 50px;
     }
 
-    .artist-events-render {
+    .artist-videos-render {
         display: block;
         text-align: center;
     }
