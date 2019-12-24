@@ -65,6 +65,8 @@ h1 {
 
 .tags-header {
     display: none;
+    margin-top: 50px;
+    margin-bottom: 50px;
     color: white;
     text-decoration: underline;
 }
@@ -91,6 +93,7 @@ h1 {
 .events-header {
     color: white;
     display: none;
+    margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
     text-decoration: underline;
@@ -112,6 +115,7 @@ h1 {
 .top-tracks-header {
     display: none;
     color: white;
+    margin-top: 50px;
     margin-bottom: 50px;
     text-decoration: underline;
 }
@@ -133,6 +137,7 @@ a:hover {
     display: none;
     color: white;
     text-align: left;
+    margin-top: 50px;
     margin-bottom: 50px;
     text-decoration: underline;
 }
@@ -158,7 +163,7 @@ a:hover {
     margin-top: 300px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
 
     #js-search-artist{
         padding: 0px 0px;
@@ -195,6 +200,10 @@ a:hover {
     }
 
     .top-tracks-header {
+        text-align: center;
+    }
+
+    .artist-top-tracks-render {
         text-align: center;
     }
 

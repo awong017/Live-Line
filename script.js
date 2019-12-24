@@ -4,7 +4,7 @@ function formatQueryParams(params) {
     return queryItems.join('&');
   }
 
-const appID = '07de26590d34af698ca9a82a14a750d4';
+const appID = '2ce9d8787c6b7562a6ece2d628930b5b';
 
 // The following "display" functions render data to be 
 // shown in the DOM
@@ -29,8 +29,6 @@ function displayArtistBio(responseJson) {
 
     let bioExtract=responseJson.query.pages[keys].extract;
 
-    console.log('Bio Extract: ', bioExtract);
-
     $('.artist-bio').empty();
 
     $('.artist-bio').append(
@@ -41,8 +39,6 @@ function displayArtistBio(responseJson) {
 }
 
 function displayError(responseJson) {
-    
-    console.log('Artist Bio API: ', responseJson);
 
     let keys=Object.keys(responseJson.query.pages)[0];
 
@@ -53,7 +49,9 @@ function displayError(responseJson) {
     if(bioExtract === undefined) {
         $('.artist-heading').css('display','none');
         $('.tags').css('display','none');
-        $('.artist-page').css('display','none');
+        $('.top-tracks').css('display','none');
+        $('.events').css('display','none');
+        $('.videos').css('display','none');
 
         $('.error-page').append(
             `<div class="error-page-render">
@@ -65,7 +63,9 @@ function displayError(responseJson) {
     {
         $('.artist-heading').css('display','block');
         $('.tags').css('display','block');
-        $('.artist-page').css('display','flex');
+        $('.top-tracks').css('display','block');
+        $('.events').css('display','block');
+        $('.videos').css('display','block');
     }
 }
 
@@ -129,8 +129,8 @@ function displayArtistTopTracks(responseJson) {
     for(i=0; i<10; i++) {
 
         $('.artist-top-tracks').append(
-            `<li class="artist-top-tracks-render"><a href="${responseJson.toptracks.track[i].url}">${responseJson.toptracks.track[i].name}</a>
-            </li>`        
+            `<p class="artist-top-tracks-render"><a href="${responseJson.toptracks.track[i].url}">${i+1})  ${responseJson.toptracks.track[i].name}</a>
+            </p>`        
     )}
 }
 
