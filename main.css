@@ -238,6 +238,11 @@ a:hover {
 
 @media screen and (max-width: 500px) {
 
+    body {
+        background-image: none;
+        background-color: black;
+    }
+
     .artist-image {
         width: 50%;
         height: 50%;
