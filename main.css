@@ -191,8 +191,8 @@ a:hover {
     }
 
     .artist-image {
-        width: 20%;
-        height: 20%;
+        width: 30%;
+        height: 30%;
     }
 
     .tags {
@@ -239,7 +239,11 @@ a:hover {
 @media screen and (max-width: 500px) {
 
     body {
-        background: none;
-        background-color: black;
+        background-size: auto;
+    }
+
+    .artist-image {
+        width: 50%;
+        height: 50%;
     }
 }
