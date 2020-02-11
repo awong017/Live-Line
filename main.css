@@ -239,7 +239,8 @@ a:hover {
 @media screen and (max-width: 500px) {
 
     body {
-        background-image: none;
+        background-image: "https://wallpaperaccess.com/full/127068.jpg";
+        background-position: fixed;
         background-color: black;
     }
 
