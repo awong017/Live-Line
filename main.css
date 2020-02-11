@@ -239,8 +239,8 @@ a:hover {
 @media screen and (max-width: 500px) {
 
     body {
-        background-image: "https://wallpaperaccess.com/full/127068.jpg";
-        background-position: auto;
+        background: url('https://wallpaperaccess.com/full/127068.jpg') fixed;
+        background-size: cover;
         background-color: black;
     }
 
