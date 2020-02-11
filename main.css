@@ -239,7 +239,10 @@ a:hover {
 @media screen and (max-width: 500px) {
 
     body {
-        background: url('https://wallpaperaccess.com/full/127068.jpg') fixed;
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+            url('https://wallpaperaccess.com/full/127068.jpg') fixed;
         background-size: cover;
         background-color: black;
     }
