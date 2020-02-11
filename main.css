@@ -240,7 +240,7 @@ a:hover {
 
     body {
         background-image: "https://wallpaperaccess.com/full/127068.jpg";
-        background-position: fixed;
+        background-position: auto;
         background-color: black;
     }
 
