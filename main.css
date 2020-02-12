@@ -251,4 +251,8 @@ a:hover {
         width: 50%;
         height: 50%;
     }
+
+    .error-page {
+        margin-top: 200px;
+    }
 }
