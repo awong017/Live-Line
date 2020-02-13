@@ -135,18 +135,24 @@ function displayArtistTopTracks(responseJson) {
 }
 
 function displayArtistVideos(responseJson) {
-   
+
     $('.artist-videos').empty();
 
-    $('.videos-header').css('display', 'block');
+    if(responseJson.length === undefined) {
+        $('.videos-header').css('display', 'none');
+    }
+    else
+    {
+        $('.videos-header').css('display', 'block');
 
-    for(i=0; i<5; i++) {
-        $('.artist-videos').append(
-            `<div class="artist-videos-render">
-                <p>${responseJson.items[i].snippet.title}</p>
-                <iframe src="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}?rel=0" width="300" height="300" frameborder="0"></iframe>
-            </div>`
-        )
+        for(i=0; i<5; i++) {
+            $('.artist-videos').append(
+                `<div class="artist-videos-render">
+                    <p>${responseJson.items[i].snippet.title}</p>
+                    <iframe src="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}?rel=0" width="300" height="300" frameborder="0"></iframe>
+                </div>`
+            )
+        }
     }
 }
 

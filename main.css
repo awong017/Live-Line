@@ -166,7 +166,7 @@ a:hover {
 @media screen and (max-width: 960px) {
 
     #js-search-artist{
-        padding: 0px 0px;
+        padding: 5px 5px;
         margin-bottom: 20px;
     }
     
