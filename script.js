@@ -91,10 +91,12 @@ function displayArtistEvents(responseJson) {
 
     if(responseJson.length == 0) {
         $('.events-header').css('display', 'none');
+        $('.events-message').css('display', 'block');
     }
     else
     {
         $('.events-header').css('display','block');
+        $('.events-message').css('display', 'none');
         for(let i=0; i<10; i++) {
             let area="";
             if(responseJson[i].venue.country == "United States")

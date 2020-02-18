@@ -99,6 +99,14 @@ h1 {
     text-decoration: underline;
 }
 
+.events-message {
+    color: white;
+    display: none;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
 .artist-events-render {
     padding-bottom: 20px;
     text-align: center;
@@ -214,6 +222,12 @@ a:hover {
     }
 
     .events-header {
+        text-align: center;
+        border-top: 2px white dotted;
+        padding-top: 50px;
+    }
+
+    .events-message {
         text-align: center;
         border-top: 2px white dotted;
         padding-top: 50px;
