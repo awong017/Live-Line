@@ -51,7 +51,6 @@ function displayError(responseJson) {
         $('.tags').css('display','none');
         $('.top-tracks').css('display','none');
         $('.events').css('display','none');
-        $('.videos').css('display','none');
 
         $('.error-page').append(
             `<div class="error-page-render">
@@ -65,7 +64,6 @@ function displayError(responseJson) {
         $('.tags').css('display','block');
         $('.top-tracks').css('display','block');
         $('.events').css('display','block');
-        $('.videos').css('display','block');
     }
 }
 
@@ -136,28 +134,6 @@ function displayArtistTopTracks(responseJson) {
     )}
 }
 
-function displayArtistVideos(responseJson) {
-
-    $('.artist-videos').empty();
-
-    if(responseJson.length === undefined) {
-        $('.videos-header').css('display', 'none');
-    }
-    else
-    {
-        $('.videos-header').css('display', 'block');
-
-        for(i=0; i<5; i++) {
-            $('.artist-videos').append(
-                `<div class="artist-videos-render">
-                    <p>${responseJson.items[i].snippet.title}</p>
-                    <iframe src="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}?rel=0" width="300" height="300" frameborder="0"></iframe>
-                </div>`
-            )
-        }
-    }
-}
-
 function toTitleCase(str) {
     return str.replace(
         /\w\S*/g,
@@ -211,26 +187,6 @@ function getArtistTopTracks() {
         .then(responseJson => displayArtistTopTracks(responseJson));
 }
 
-function getArtistVideos() {
-    const apiKey = 'AIzaSyC9p6TXkLc2rF6VQSyEQHGmeBZg7ZUDY_A'; 
-    const artist = $('.search-bar').val();
-    const searchURL = 'https://www.googleapis.com/youtube/v3/search';
-
-    const params = {
-        key: apiKey,
-        q: artist,
-        part: 'snippet',
-        maxResults: 50,
-        type: 'video'
-      };
-      const queryString = formatQueryParams(params)
-      const url = searchURL + '?' + queryString;
-    
-      fetch(url)
-      .then(response => response.json())
-      .then(responseJson => displayArtistVideos(responseJson));
-    }
-
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -255,7 +211,6 @@ function handleSearch() {
         getArtistBio();
         getArtistTags();
         getArtistTopTracks();
-        getArtistVideos();
         getArtistEvents();
         $('.homepage').css('display', 'none');
         $('#js-homepage').css('text-align', 'right')
