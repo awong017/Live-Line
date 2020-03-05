@@ -10,7 +10,7 @@ body {
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.7)
       ),
-       url('https://miro.medium.com/max/5600/1*wjfSFGr3OzwP4I6nQ12EvQ.png') fixed;
+       url("./images/concert-large.png") fixed;
     background-size: cover;
     background-position: center center;
     background-color: black;
@@ -231,7 +231,7 @@ a:hover {
         background: linear-gradient(
             rgba(0, 0, 0, 0.7),
             rgba(0, 0, 0, 0.7)),
-            url('https://wallpaperaccess.com/full/127068.jpg') fixed;
+            url("./images/concert-small.jpg") fixed;
         background-size: cover;
         background-color: black;
     }
