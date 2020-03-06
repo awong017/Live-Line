@@ -47,7 +47,8 @@ function displayError(responseJson) {
     $('.error-page').empty();
 
     if(bioExtract === undefined) {
-        $('.artist-heading').css('display','none');
+        $('.artist-data').css('display','none');
+        $('.artist-bio').css('display','none');
         $('.tags').css('display','none');
         $('.top-tracks').css('display','none');
         $('.events').css('display','none');
@@ -60,7 +61,8 @@ function displayError(responseJson) {
     }
     else
     {
-        $('.artist-heading').css('display','block');
+        $('.artist-data').css('display','block');
+        $('.artist-bio').css('display','block');
         $('.tags').css('display','block');
         $('.top-tracks').css('display','block');
         $('.events').css('display','block');

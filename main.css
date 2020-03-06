@@ -37,7 +37,6 @@ h1 {
     color: white;
   }
   
-
 #js-search-artist{
     text-align: center;
     border-radius: 25px;
@@ -65,12 +64,22 @@ h1 {
     color: white;
 }
 
+.artist-heading {
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+
 .tags-header {
     display: none;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     color: white;
     text-decoration: underline;
+}
+
+.artist-tags {
+    display: grid;
+    grid-template-columns: repeat(5, 5%);
 }
 
 .artist-tags-render {
@@ -85,17 +94,18 @@ h1 {
 
 .artist-bio {
     color: white;
+    margin-top: auto;
+    /* color: white; */
 }
 
 .artist-image {
-    width: 10%;
-    height: 10%;
+    width: 75%;
+    height: 75%;
 }
 
 .events-header {
     color: white;
     display: none;
-    margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
     text-decoration: underline;
@@ -104,18 +114,20 @@ h1 {
 .events-message {
     color: white;
     display: none;
-    margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
 }
 
 .artist-events-render {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
     padding-bottom: 20px;
     text-align: center;
 }
 
 .event-name {
     color: white;
+    text-align: left;
 }
 
 .event-details {
@@ -125,8 +137,7 @@ h1 {
 .top-tracks-header {
     display: none;
     color: white;
-    text-align: center;
-    margin-top: 50px;
+    text-align: left;
     margin-bottom: 50px;
     text-decoration: underline;
 }
@@ -141,13 +152,13 @@ a:hover {
 
 .artist-top-tracks-render {
     color: white;
-    text-align: center;
+    text-align: left;
     margin-bottom: 25px;
 }
 
 .artist-page {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 30% 65% 5%;
 }
 
 .error-page {
@@ -176,6 +187,10 @@ a:hover {
         text-align: center;
     }
 
+    .artist-heading {
+        display: block;
+    }
+
     .artist-data {
         text-align: center;
     }
@@ -191,6 +206,10 @@ a:hover {
 
     .tags {
         text-align: center;
+    }
+
+    .artist-tags {
+        grid-template-columns: repeat(5, 20%);
     }
 
     .artist-page {
@@ -219,6 +238,10 @@ a:hover {
         padding-top: 50px;
     }
 
+    .event-name {
+        text-align: center;
+    }
+    
     .artist-events-render {
         display: block;
         text-align: center;
@@ -236,12 +259,75 @@ a:hover {
         background-color: black;
     }
 
+    .homepage-title {
+        font-size: 16px;
+    }
+
+    .homepage-heading {
+        font-size: 12px;
+    }
+
+    #js-search-artist{
+        border-radius: 25px;
+        padding: 5px 5px;
+    }
+    
+    .submit {
+        border-radius: 25px;
+        padding: 5px 5px;
+      }
+
     .artist-image {
         width: 50%;
         height: 50%;
     }
 
+    .artist-heading {
+        font-size: 14px;
+    }
+
+    .artist-data {
+        font-size: 12px;
+    }
+
+    .artist-bio {
+        font-size: 12px;
+    }
+
+    .tags-header {
+        font-size: 16px;
+    }
+
+    .artist-tags {
+        font-size: 12px;
+    }
+
+    .top-tracks-header {
+        font-size: 16px;
+    }
+
+    .artist-top-tracks {
+        font-size: 12px;
+    }
+
+    .events-header {
+        font-size: 16px;
+    }
+
+    .event-name {
+        font-size: 14px;
+    }
+
+    .artist-events {
+        font-size: 12px;
+    }
+
+    .events-message {
+        font-size: 16px;
+    }
+
     .error-page {
         margin-top: 200px;
+        font-size: 16px;
     }
 }
