@@ -95,7 +95,6 @@ h1 {
 .artist-bio {
     color: white;
     margin-top: auto;
-    /* color: white; */
 }
 
 .artist-image {
@@ -110,6 +109,7 @@ h1 {
     text-align: center;
     text-decoration: underline;
 }
+
 
 .events-message {
     color: white;
@@ -132,6 +132,10 @@ h1 {
 
 .event-details {
     color: lightskyblue;
+}
+
+.event-tickets {
+    padding-top: 13px;
 }
 
 .top-tracks-header {
@@ -245,6 +249,10 @@ a:hover {
     .artist-events-render {
         display: block;
         text-align: center;
+    }
+
+    .event-tickets {
+        padding-top: 0px;
     }
 }
 

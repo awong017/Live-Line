@@ -116,7 +116,7 @@ function displayArtistEvents(responseJson) {
                     <h2 class="event-name">${responseJson[i].venue.name}</h2>
                     <p class="event-details">${responseJson[i].venue.city}, ${area}</p>
                     <p class="event-details">${shortDate}</p>
-                    <a href="${responseJson[i].offers[0].url}">Get Tickets</a>
+                    <a class="event-tickets" href="${responseJson[i].offers[0].url}">Get Tickets</a>
                 </div>`
             )};  
         }     
